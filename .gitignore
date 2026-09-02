@@ -14,3 +14,7 @@ vendor/
 
 # Dados de runtime (rate limiting do formulário)
 storage/*.json
+
+# Artefatos locais
+__pycache__/
+*.pyc

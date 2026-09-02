@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /enviar.php
+Disallow: /vendor/
+Disallow: /storage/
 
 Sitemap: https://www.grupoednave.com.br/sitemap.xml

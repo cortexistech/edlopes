@@ -1,13 +1,20 @@
-# Cabeçalhos de segurança básicos
+Options -Indexes
+
+# Cabeçalhos de segurança
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
-  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Cross-Origin-Resource-Policy "same-origin"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; frame-src 'self' https://www.google.com https://maps.google.com https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; upgrade-insecure-requests"
 </IfModule>
 
 # Bloqueia acesso direto a arquivos sensíveis
-<FilesMatch "^(\.env|composer\.json|composer\.lock)$">
+<FilesMatch "^(\.env.*|composer\.(json|lock)|README\.md|\.gitignore|.*\.py|.*\.pyc)$">
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>
@@ -16,3 +23,9 @@
     Deny from all
   </IfModule>
 </FilesMatch>
+
+# Bloqueia pastas que não devem ser servidas pela web
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(\.git|vendor|storage|__pycache__|\.vscode)(/|$) - [F,L]
+</IfModule>
