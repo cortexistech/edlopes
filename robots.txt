@@ -3,5 +3,6 @@ Allow: /
 Disallow: /enviar.php
 Disallow: /vendor/
 Disallow: /storage/
+Disallow: /server-check.php
 
 Sitemap: https://www.grupoednave.com.br/sitemap.xml
