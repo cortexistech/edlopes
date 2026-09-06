@@ -278,3 +278,103 @@
         height: 240px;
     }
 }
+
+.home-certifications {
+    background: var(--cinza-claro);
+    padding: 64px 0;
+    margin-top: 8px;
+}
+
+.home-certifications h2 {
+    font-size: clamp(26px, 3.8vw, 32px);
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--red-edlopes);
+    display: inline-block;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--branco);
+    border-radius: 8px;
+    padding: 32px;
+    text-decoration: none;
+    color: var(--azul-edlopes);
+    box-shadow: 0 12px 28px rgba(20, 33, 61, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(20, 33, 61, 0.16);
+}
+
+.cert-badge {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--red-edlopes);
+    background: rgba(214, 39, 42, 0.08);
+    border: 1px solid rgba(214, 39, 42, 0.24);
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin-bottom: 20px;
+}
+
+.cert-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.cert-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(20, 33, 61, 0.78);
+    margin-bottom: 24px;
+}
+
+.cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    font-weight: 700;
+    font-size: 14px;
+    border-bottom: 2px solid var(--red-edlopes);
+    padding-bottom: 2px;
+    transition: color 0.25s;
+}
+
+.cert-link svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.cert-card:hover .cert-link {
+    color: var(--red-edlopes);
+}
+
+@media (max-width: 900px) {
+    .home-certifications {
+        padding: 48px 0;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cert-card {
+        padding: 24px;
+    }
+}
