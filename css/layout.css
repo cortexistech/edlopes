@@ -430,7 +430,7 @@ footer h3 {
     border-color: var(--red-edlopes);
 }
 
-.footer-credit span {
+.footer-credit a {
     color: var(--branco);
     font-weight: 700;
 }
