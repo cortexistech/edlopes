@@ -19,3 +19,6 @@ storage/*.json
 __pycache__/
 *.pyc
 composer.phar
+
+# Pacote para deploy
+edlopesBuilder/
