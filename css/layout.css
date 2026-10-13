@@ -430,9 +430,36 @@ footer h3 {
     border-color: var(--red-edlopes);
 }
 
+.footer-credit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
 .footer-credit a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     color: var(--branco);
     font-weight: 700;
+    border-bottom: none;
+}
+
+.footer-credit img {
+    display: block;
+    height: 1.4em;
+    width: auto;
+    transition: transform 0.25s;
+}
+
+.footer-credit a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--red-edlopes);
+    text-underline-offset: 3px;
+}
+
+.footer-credit a:hover img {
+    transform: scale(1.1);
 }
 
 .list {
